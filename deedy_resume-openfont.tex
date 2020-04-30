@@ -1,6 +1,35 @@
 
 \documentclass[]{deedy-resume-openfont}
 
+% Using Tick Mark to show links
+\usepackage{tikz}
+\newcommand{\ExternalLink}{%
+    \tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{% 
+        \begin{scope}[x=1ex, y=1ex]
+            \clip (-0.1,-0.1) 
+                --++ (-0, 1.2) 
+                --++ (0.6, 0) 
+                --++ (0, -0.6) 
+                --++ (0.6, 0) 
+                --++ (0, -1);
+            \path[draw, 
+                line width = 0.5, 
+                rounded corners=0.5] 
+                (0,0) rectangle (1,1);
+        \end{scope}
+        \path[draw, line width = 0.5] (0.5, 0.5) 
+            -- (1, 1);
+        \path[draw, line width = 0.5] (0.6, 1) 
+            -- (1, 1) -- (1, 0.6);
+        }
+    }
+
+% \usepackage{fontawesome}
+\usepackage[hidelinks]{hyperref}
+
+% Redefinition, symbol included in link:
+\let\orighref\href
+\renewcommand{\href}[2]{\orighref{#1}{#2\,\ExternalLink}}
 
 \usepackage{tgbonum}
 \begin{document}
@@ -30,19 +59,19 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace{-0.1in}
-\begin{minipage}[t]{0.33\textwidth} 
+\begin{minipage}[t]{0.35\textwidth} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     EDUCATION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Education} 
 
-\descript{\large Bharati Vidyapeeth's College Of Engineering, Delhi}
+\descript{\large Bharati Vidyapeeth's College Of Engineering, New Delhi}
 Undergraduate, Electronics \& Communication Engineering \textbullet{}\underline{\textcolor{blue}{89.4\%}} \textbullet{}2015-2019 \textbullet{}Best Student Award
 \sectionsep
 
 
-\descript{\large Kendriya Vidyalaya Tagore Garden}
+\descript{\large Kendriya Vidyalaya Tagore Garden, New Delhi}
 AISSCE, CBSE Board (XII) \textbullet{}\underline{\textcolor{blue}{95\%}}\\
 \textbullet{}Positioned in top 1.5\% KVS India
 \sectionsep
@@ -96,11 +125,11 @@ Image Processing \& Computer Vision
 \textbullet{}
 \href{https://site.ieee.org/sb-bvcoend/wiehack/}{Organizer, WIEHack 2018}\\
 \textbullet{}
-\href{https://www.facebook.com/aagaaz.bvcoe}{Head-Aagaaz BVCOE Music Society}\\
+\href{http://www.bvcoendevents.com/category/aagaaz}{Head-Aagaaz BVCOE Music Society}\\
 \textbullet{}
-Head, Robotics \& Automation Society\\
+\href{https://www.facebook.com/bvpieeeras/}{Head, Robotics \& Automation Society}\\
 \textbullet{}
-Sponsorship Head at PyData Delhi'19
+\href{https://pydata.org/delhi2019/}{Sponsorship Head at PyData Delhi'19}
 \sectionsep
 % \textbullet{}
 % Chairperson at BVPIEEE HKN (Eta Kappa Nu Student Chapter)
@@ -116,7 +145,7 @@ Sponsorship Head at PyData Delhi'19
 \textbullet{}JK Pal Memorial- Best Student Award, IEEE Delhi Section (R10)\\
 \textbullet{}\href{https://www.youtube.com/watch?v=klHIkianCT4}{Runner Ups: eYantra Robotics Competition 2016(CSE, IIT Bombay)}\\
 \textbullet{}1st position- Evotech 2018\\
-\textbullet{}1st position- Wheelectrifying (Cognizance 2019, IIT Roorkee) \\
+\textbullet{}\href{https://dare2compete.com/o/wheelectrifying-cognizance-19-iit-roorkee-cognizance-2019-iit-roorkee-indian-institute-of-technology-iit-roorkee-81648}{1st position- Wheelectrifying (Cognizance 2019, IIT Roorkee)} \\
 \sectionsep
 \hline
 \sectionsep
@@ -148,28 +177,29 @@ Sponsorship Head at PyData Delhi'19
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace{-0.07in}
 \section{Experience}
-\runsubsection{ZS Associates}
+\runsubsection{\href{https://www.zs.com/}{ZS Associates}}
 \descript{| Business Technology Analyst}
 \location{06/19-Current | New Delhi}
 \vspace{\topsep}
-\begin{tightemize}\item Enhancement and operations management of two 1-click automated systems for US based pharmaceutical client
-\item Development of heterogeneous data integration and processing systems to align and credit sales for medical representatives
+\begin{tightemize}\item Development of end-to-end systems for alignment of sales to medical representatives using heterogeneous data sources
+\item Enhancements and automation of monthly incentive compensation systems using Unix and Python scripting
+
 \end{tightemize}
 \sectionsep
 
 \runsubsection{IIT Delhi}
 \descript{| Summer Research Intern}
 \location{06/18 – 08/18 | New Delhi}
-\begin{tightemize}\item Research and development of pedestrian trajectory prediction methodologies and optimization of multi object tracking algorithms for dynamic vehicle-dashboard cameras, under
+\begin{tightemize}\item Research and development of pedestrian trajectory prediction methodologies and optimization of multi-object tracking algorithms for dynamic vehicle-dashboard cameras, with
 Dr.Brejesh Lall (Head, EE Dept, IIT-D)
 \end{tightemize}
 \sectionsep
 
-\runsubsection{\href{https://celestini.org/programs/india/reducing-pedestrian-traffic-fatalities/}{Celestini Project India}}
+\runsubsection{\href{https://celestini.org/programs/india/reducing-pedestrian-traffic-fatalities/}{Celestini Project India}} 
 \descript{| Project Intern}
 \location{06/17 - 07/17 | Marconi Society \& IIT Delhi}
 \begin{tightemize}
-\item Prototyping and creating test-bed for a low latency collaborative driver assistance system to prevent on-road collisions using real-time networking of sensory data
+\item Prototyping and creating test-bed for a low latency collaborative driver assistance system to prevent on-road collisions using real-time networking of sensory data from vehicles
 \item Awarded Paul Baran Young Scholar Celestini Prize India 2017 by Dr.Robert Tkach (Vice-chairman, Marconi Soc.) \& Dr.Aakanksha Chowdhery (Google Brain, Tensorflow)
 \end{tightemize}
 
@@ -180,17 +210,17 @@ Dr.Brejesh Lall (Head, EE Dept, IIT-D)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hline
 \section{Research}
-\runsubsection{Advance Driver Assistance Systems for Indian Road Scenarios}
+\runsubsection{\href{https://dl.acm.org/doi/abs/10.1145/3117811.3131255}{Advance Driver Assistance Systems for Indian Road Scenarios}}
 \location{Duration: 04/2017-10/2018}
 \begin{itemize}
 \vspace{-0.07in}
-    \item \href{https://dl.acm.org/citation.cfm?doid=3117811.3131255}{Poster in \href{https://www.sigmobile.org/mobicom/2017/}{23rd Conference ACM MobiCom (2017)} - Drizy: A Collaborative Driver Assistance System}\textsuperscript{1}  for
-    \href{https://github.com/chetanchawla/Drizy}{Vehicle-to-Vehicle}\textsuperscript{2} and Vehicle-to-Pedestrian Collision avoidance modules
+    \item Poster in \href{https://www.sigmobile.org/mobicom/2017/}{23rd Conference ACM MobiCom (2017)} - Drizy: A Collaborative Driver Assistance System  for
+    \href{https://github.com/chetanchawla/Drizy}{Vehicle-to-Vehicle} and Vehicle-to-Pedestrian Collision avoidance modules
     \vspace{-0.07in}
     \item Creating and benchmarking an Indian road detection and tracking dataset (\~50,000 annotated frames, 7 classes, occlusion information)
 \end{itemize}
 
-\runsubsection{\href{http://bvicam.ac.in/news/INDIACom\%202018\%20Proceedings/Main/papers.html}{Aquacom: Underwater Visible Light Communication (2738 Publishing Number)\\}}
+\runsubsection{\href{http://bvicam.ac.in/news/INDIACom\%202018\%20Proceedings/Main/papers.html}{Aquacom: Underwater Visible Light Communication (2738 Publishing Number)}}\\
 \location{I. Janveja, \emph{\underline{C. Chawla}}, N. Garg, J. Parikh}
 Designing and testing a low cost portable wireless transceiver for underwater communication using VLC. The paper was accepted in Indiacom 2018
 \sectionsep
@@ -205,7 +235,7 @@ Designing and testing a low cost portable wireless transceiver for underwater co
     \item{\small(04/19)} |
     \descript{\href{https://github.com/chetanchawla/eYantra2018-HB}{Autonomous drone traversal in constraint paths}}
     \vspace{-0.05in}
-    \item{\small(03/19)} | \descript{\href{https://github.com/chetanchawla/Dronalyser}{Dronalyser: Agri-Analyser Drone System}}
+    \item{\small(03/19)} | \descript{\href{https://github.com/chetanchawla/Dronalyser}{Dronalyser: Agricultural-Analyser Drone System}}
     \vspace{-0.05in}
     \item{\small(03/19)} |
     \descript{\href{https://github.com/chetanchawla/Future-Gadget-Labs-HINT}{Meishu: Real-time networking based rescue system}}
@@ -233,7 +263,7 @@ Designing and testing a low cost portable wireless transceiver for underwater co
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Technologies}
-\textbullet{}Deep Learning \& ML \textbullet{}Comp. Vision \textbullet{}Robotics \& Networking \textbullet{}UAV \& UGV path planning \textbullet{}Data ETL and Reporting \textbullet{}Serial Communication \textbullet{}Android Development \textbullet{}Signal Processing \textbullet{}3D Modelling \& Simulation
+\textbullet{}Deep Learning \& ML \textbullet{}Comp. Vision \textbullet{}Robotics \& Networking \textbullet{}UAV \& UGV path planning \textbullet{}Data ETL \textbullet{}\href{https://certificates.automationanywhere.com/c010e3dc-0c78-48e7-891d-743711708d01}{RPA} \textbullet{}Serial Communication \textbullet{}Android Development \textbullet{}Signal Processing \textbullet{}3D Modelling \& Simulation
 \vspace{0.07in}
 \end{minipage} 
 \hline
